@@ -245,7 +245,6 @@ def process ():
             element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="menuList"]/li[3]/a')))
             #print(element)
             driver.find_element_by_xpath('//*[@id="menuList"]/li[3]/a').click()
-            print ("選擇北京賽車")
             print("-"*10)
             zgzg +=1
         except:
