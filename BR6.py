@@ -216,7 +216,6 @@ def process ():
     #ttxxtt.write("輸入密碼成功\n")
     print("輸入密碼")
     print("-"*10)
-    time.sleep(1)
     driver.find_element_by_xpath('//*[@id="login_btn"]').click()
     #ttxxtt.write("點擊登入\n")
     print("點擊登入")
@@ -232,16 +231,15 @@ def process ():
     driver.find_element_by_xpath('/html/body/div[1]/div/div[3]/input[2]').click()
     print("點擊同意")
     print("-"*10)
-    time.sleep(1)
 
     zgzg = 1
     while (zgzg < 2 ) :
         try :
             a = driver.find_element_by_class_name("menu")
             #print(a)
-            time.sleep(3)
+            
             driver.find_element_by_class_name("menu").click()
-            time.sleep(3)
+            
             element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="menuList"]/li[3]/a')))
             #print(element)
             driver.find_element_by_xpath('//*[@id="menuList"]/li[3]/a').click()
@@ -257,13 +255,12 @@ def process ():
     element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div[2]/div[1]/div[1]/div/div[1]/ul/li[2]/a')))
     #print(element)
 
-    time.sleep (6)
+ 
 
     driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[1]/div[1]/div/div[1]/ul/li[2]/a').click()
     print("選擇單球1-10")
     print("-"*10)
-    time.sleep (10)
-    
+
 def mybet():
     for rrankingg in range(0,rranking):
         if ranking[rrankingg]  == "1":
@@ -272,75 +269,75 @@ def mybet():
             for oneggin in range(0,xxcc):
                 #print (oneone)
                 driver.find_element_by_id(oneone[oneggin]).click()
-                time.sleep (1)
+                
         elif ranking[rrankingg]  == "2":
             driver.find_element_by_id('tool_ys_input').clear()
             driver.find_element_by_id('tool_ys_input').send_keys(twomoney) 
             for twoggin in range(0,rruu):
                 #print (twotwo)
                 driver.find_element_by_id(twotwo[twoggin]).click()
-                time.sleep (1)
+                
         elif ranking[rrankingg]  == "3":
             driver.find_element_by_id('tool_ys_input').clear()
             driver.find_element_by_id('tool_ys_input').send_keys(threemoney)
             for threeggin in range(0,tthreepp):
                 #print (threethree)
                 driver.find_element_by_id(threethree[threeggin]).click()     
-                time.sleep (1)
+                
         elif ranking[rrankingg]  == "4":
             driver.find_element_by_id('tool_ys_input').clear()
             driver.find_element_by_id('tool_ys_input').send_keys(fourmoney) 
             for fourggin in range(0,ffourpp):
                 driver.find_element_by_id(fourfour[fourggin]).click()     
-                time.sleep (1)          
+                          
         elif ranking[rrankingg]  == "5":
             driver.find_element_by_id('tool_ys_input').clear()
             driver.find_element_by_id('tool_ys_input').send_keys(fivesmoney)  
             for fiveggin in range(0,ffivespp):
                 #print (fivesfives)
                 driver.find_element_by_id(fivesfives[fiveggin]).click()     
-                time.sleep (1)                        
+                                       
         elif ranking[rrankingg]  == "6":
             driver.find_element_by_id('tool_ys_input').clear()
             driver.find_element_by_id('tool_ys_input').send_keys(sixmoney)   
             for sixggin in range(0,ssixpp):
                 #print (sixsix)
                 driver.find_element_by_id(sixsix[sixggin]).click()     
-                time.sleep (1)                 
+                                
         elif ranking[rrankingg]  == "7":
             driver.find_element_by_id('tool_ys_input').clear()
             driver.find_element_by_id('tool_ys_input').send_keys(sevenmoney)  
             for sevenggin in range(0,ssevenpp):
                 #print (sevenseven)
                 driver.find_element_by_id(sevenseven[sevenggin]).click()     
-                time.sleep (1)              
+                             
         elif ranking[rrankingg]  == "8":
             driver.find_element_by_id('tool_ys_input').clear()
             driver.find_element_by_id('tool_ys_input').send_keys(eightmoney)  
             for eingggin in range(0,eeingtpp):
                 #print (eighteight)
                 driver.find_element_by_id(eighteight[eingggin]).click()     
-                time.sleep (1)              
+                              
         elif ranking[rrankingg]  == "9":
             driver.find_element_by_id('tool_ys_input').clear()
             driver.find_element_by_id('tool_ys_input').send_keys(ninemoney)   
             for nineggin in range(0,nninepp):
                 #print (ninenine)
                 driver.find_element_by_id(ninenine[nineggin]).click()     
-                time.sleep (1)                 
+                                 
         elif ranking[rrankingg]  == "10":
             driver.find_element_by_id('tool_ys_input').clear()
             driver.find_element_by_id('tool_ys_input').send_keys(tenmoney)   
             for tenggin in range(0,ttenpp):
                 #print (tenten)
                 driver.find_element_by_id(tenten[tenggin]).click()
-                time.sleep (1)
+                
         else:
             print("沒填強制關閉程式")
             sys.exit(0)
 driver=webdriver.Chrome()
 driver.get(uurl)
-time.sleep(2)
+
 process()
 while True:
 	try:
@@ -356,11 +353,11 @@ while True:
 			else:
 				zozozo = 1
     
-		time.sleep (6)
+		
 		period = driver.find_element_by_xpath('//*[@id="NowJq"]').text
 		print ("現在是第"+period+"期")
 		print("-"*10)
-		time.sleep (10)
+		
 		try:  
 			driver.find_element_by_link_text('取消')
 			baba=True  
@@ -402,11 +399,11 @@ while True:
 				print("尚未下注")
 				print("-"*10)
 				mybet()
-				time.sleep (1)
+				
 				driver.find_element_by_id('gameSubmit').click()
-				time.sleep (3)
+				
 				driver.find_element_by_link_text('提交').click()
-				time.sleep (5)  
+				 
 				try:  
 					driver.find_element_by_link_text('提交')
 					a=True  
